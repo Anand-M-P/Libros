@@ -1,0 +1,210 @@
+<html>
+	<head>
+		<!--Linking resources-->
+		<!-- Website Title & Description for Search Engine purposes -->
+		<title>Libros | Share Book Reviews and Recommendations With Your Friends, Join Book Clubs</title>
+		<meta name="description" content="Share Book Recommendations With Your Friends, Write Reviews, Connect with Friends, Joi Groups">
+		
+		<!-- Mobile viewport optimized -->
+		<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		
+		<!-- Bootstrap CSS -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap-glyphicons.css" rel="stylesheet">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"><!--for social glyphs-->
+		
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="css/style.css">
+
+		<!-- Include Modernizr in the head, before any other Javascript -->
+		<script src="js/modernizr-2.6.2.min.js"></script>
+		
+		<!-- Bootstrap Javascript -->
+		<script src="js/bootstrap.min.js"></script>
+
+	</head>
+
+	<body ><!--background="images/background.jpg"-->
+		<div   class="navbar  navbar-default navbar-fixed-top"> 
+	        <div class="container">
+		        <!-- Brand Logo/Name -->
+	            <a class="navbar-brand" href="index.html"><img src="images/logo1.png" alt="Your Logo"></a>
+	            
+	            <button class="navbar-toggle" data-toggle = "collapse" data-target=".navHeaderCollapse">
+	            	<span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>  
+	           	</button> 
+	            
+	            <div class="collapse navbar-collapse navHeaderCollapse" >            
+	            	<ul class="nav navbar-nav navbar-right">                
+	                	<li class="active"><a href="index.html" >Home</a></li>
+	                    <li><a href="faq.html">FAQ</a></li>
+	                    <li><a href="about.html">About Us</a></li>	                   
+	                    <li><a href="www.facebook.com"><i class="fa fa-facebook"></i></a></li>
+	                    <li><a href="www.twitter.com"><i class="fa fa-twitter"></i></a></li>	                    
+	                    <li><a href="www.instagram.com"><i class="fa fa-instagram"></i></a></li>
+	                    <li><a href="www.plus.google.com"><i class="fa fa-google-plus"></i></a></li>                                    
+	                </ul>            	
+	            </div>
+	        </div>
+	    </div><!-- End of Navbar -->
+
+		 
+		<div class="container"> 
+
+			<!--Login Box-->
+	        <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 pull-right">
+	        	<div class="panel panel-info" >
+	                
+	                <div class="panel-heading">
+	                    <div class="panel-title">Sign In</div>
+	                </div>     
+
+	                <div style="padding-top:30px" class="panel-body" >
+	                    <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>	                        
+
+	                    <form id="loginform" class="form-horizontal" role="form" method="POST" action="login.php">	                                
+	                        
+	                        <div style="margin-bottom: 25px" class="input-group">
+	                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+	                            <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username or email" required autofocus>                                        
+	                        </div>
+	                            
+	                        <div style="margin-bottom: 25px" class="input-group">
+	                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+	                            <input id="login-password" type="password" class="form-control" name="password" placeholder="password" pattern=".{8,}"   required title="8 characters minimum">
+	                        </div>
+	                  	                     
+	                        <div style="margin-top:10px" class="form-group">
+	                            <!-- Button -->
+	                            <div class="col-sm-12 controls">
+	                              <button id="btn-login" class="btn btn-md btn-success" type="submit" align="center"> Login </button>
+	                            </div>
+	                        </div>
+
+	                        <div class="form-group">
+	                            <div class="col-md-12 control">
+	                                <div style="font-size:85%" > <!-- style="border-top: 1px solid#888; padding-top:15px"-->
+	                                    <b>New Here? Create A Free Account</b>
+	                                    <a href="#" onclick="$('#loginbox').hide(); $('#signupbox').show()"><button type="button" class="btn btn-md btn-info"><b> Sign Up Here </b></button> </a>       
+	                                </div>
+	                            </div>
+	                        </div>                             
+	                    </form>
+	               	</div>                     
+	            </div>  
+	        </div>
+
+	        <!--Sign Up Box -->
+	        <div id="signupbox" style="display:none; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+	            <div class="panel panel-info">
+	                <div class="panel-heading">
+	                    <div class="panel-title">Sign Up</div>
+	                    <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Sign In</a></div>
+	                </div> 
+
+	                <div class="panel-body" >
+	                    <form id="signupform" class="form-horizontal" role="form" action="signup.php" method="POST">	                        
+	                        <div id="signupalert" style="display:none" class="alert alert-danger">
+	                            <p>Error:</p>
+	                            <span></span>
+	                        </div>	  
+
+	                        <div class="form-group">
+	                            <label for="username" class="col-md-3 control-label">Username</label>
+	                            <div class="col-md-9">
+	                                <input type="text" class="form-control" name="username" placeholder="Username" required autofocus>
+	                            </div>
+	                        </div>                                  
+	                        	                                  
+	                        <div class="form-group">
+	                            <label for="email" class="col-md-3 control-label">Email</label>
+	                            <div class="col-md-9">
+	                                <input type="text" class="form-control" name="email" placeholder="Email Address" required>
+	                            </div>
+	                        </div>
+	                            
+	                        <div class="form-group">
+	                            <label for="firstname" class="col-md-3 control-label">First Name</label>
+	                            <div class="col-md-9">
+	                                <input type="text" class="form-control" name="firstname" placeholder="First Name" required>
+	                            </div>
+	                        </div>
+
+	                        <div class="form-group">
+	                            <label for="lastname" class="col-md-3 control-label">Last Name</label>
+	                            <div class="col-md-9">
+	                                <input type="text" class="form-control" name="lastname" placeholder="Last Name" required>
+	                            </div>
+	                        </div>
+
+	                        <div class="form-group">
+	                            <label for="password" class="col-md-3 control-label">Password</label>
+	                            <div class="col-md-9">
+	                                <input type="password" class="form-control" name="passwd" placeholder="Password" pattern=".{8,}"   required title="8 characters minimum">
+	                            </div>
+	                        </div>
+	                            
+	                        <div class="form-group">
+	                            <label for="icode" class="col-md-3 control-label">Confirm Password</label>
+	                            <div class="col-md-9">
+	                                <input type="password" class="form-control" name="cpasswd" placeholder="Confirm Password" pattern=".{8,}"   required title="8 characters minimum">
+	                            </div>
+	                        </div>
+
+	                        <div class="form-group">
+	                            <!-- Button -->                                        
+	                            <div class="col-md-offset-3 col-md-9">
+	                                <button id="btn-signup" type="submit" class="btn btn-md btn-success"><i class="icon-hand-right"></i> &nbsp Sign Up</button>
+	                              <!--  <span style="margin-left:8px;">or</span>  -->
+	                            </div>
+	                        </div>
+	                                                      	                                	                               
+	                    </form>
+	                </div>
+	            </div>      
+	        </div> 
+   		</div>	
+
+   		<!-- Footer -->
+   		<footer class="footer navbar-fixed-bottom">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2">
+					<h6>Copyright &copy; 2015 Libros Inc </h6>
+					</div><!-- end col-sm-2 -->
+					
+					<div class="col-sm-4">
+						<h6 align="center">A Project By Anand MP</h6>
+						
+					</div><!-- end col-sm-4 -->
+					
+					<div class="col-sm-2">
+						<a href="terms.html" ><h6> <span class="glyphicon glyphicon glyphicon-th-list"></span> Terms Of Use </h6></a>
+					</div><!-- end col-sm-2 -->
+					
+					<div class="col-sm-2">						
+						<a href="privacy.html"><h6> <span class="glyphicon glyphicon-user"></span> Privacy </h6></a>
+					</div><!-- end col-sm-2 -->
+
+					<div class="col-sm-2">
+						<a href="help.html"><h6> <span class="glyphicon glyphicon glyphicon glyphicon-thumbs-up"></span> Help </h6></a>
+					</div><!-- end col-sm-2 -->
+
+				</div><!-- end row -->
+			</div><!-- end container -->
+		</footer>
+		<!-- First try for the online version of jQuery-->
+		<script src="http://code.jquery.com/jquery.js"></script>
+		
+		<!-- If no online access, fallback to our hardcoded version of jQuery -->
+		<script>window.jQuery || document.write('<script src=" js/jquery-1.8.2.min.js " ><\/script>')</script> 
+		
+		<!-- Bootstrap JS -->
+		<script src="js/bootstrap.min.js"></script>
+		
+		<!-- Custom JS -->
+		<script src="js/script.js"></script>
+	</body>
+</html>

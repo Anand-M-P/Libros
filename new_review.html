@@ -1,0 +1,142 @@
+<html>
+	<head>
+		<!--Linking resources-->
+		<!-- Website Title & Description for Search Engine purposes -->
+		<title>Libros | Share Book Reviews and Recommendations With Your Friends, Join Book Clubs</title>
+		<meta name="description" content="Share Book Recommendations With Your Friends, Write Reviews, Connect with Friends, Joi Groups">
+		
+		<!-- Mobile viewport optimized -->
+		<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		
+		<!-- Bootstrap CSS -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap-glyphicons.css" rel="stylesheet">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"><!--for social glyphs-->
+		
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="css/style.css">
+
+		<!-- Include Modernizr in the head, before any other Javascript -->
+		<script src="js/modernizr-2.6.2.min.js"></script>
+		
+		<!-- Bootstrap Javascript -->
+		<script src="js/bootstrap.min.js"></script>
+
+	</head>
+
+	<body ><!--background="images/background.jpg"-->
+
+
+		<div   class="navbar  navbar-default navbar-fixed-top"> 
+	        <div class="container">
+		        <!-- Brand Logo/Name -->
+	            <a class="navbar-brand" href="index.html"><img src="images/logo1.png" alt="Your Logo"></a>
+	            
+	            <button class="navbar-toggle" data-toggle = "collapse" data-target=".navHeaderCollapse">
+	            	<span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>  
+	           	</button> 
+	            
+	            <div class="collapse navbar-collapse navHeaderCollapse" >            
+	            	<ul class="nav navbar-nav navbar-right">                
+	                	<li class="active"><a href="profile.php" >Profile</a></li>
+	                    <li><a href="faq.html">FAQ</a></li>
+	                    <li><a href="about.html">About Us</a></li>
+	                    <li><a href="www.facebook.com"><i class="fa fa-facebook"></i></a></li>
+	                    <li><a href="www.twitter.com"><i class="fa fa-twitter"></i></a></li>	                    
+	                    <li><a href="www.instagram.com"><i class="fa fa-instagram"></i></a></li>
+	                    <li><a href="www.plus.google.com"><i class="fa fa-google-plus"></i></a></li>
+	                    <li class="pull right"><a href="logout.php"><button class="btn btn-sm btn-primary"> <span class="glyphicon glyphicon-user"></span> Log Out</button></a></li>                                    
+	                </ul>            	
+	            </div>
+	        </div>
+	    </div><!-- End of Navbar -->
+
+
+		 
+		<div class="container"> 
+	        <!--New Review Box -->
+	        <div id="reviewbox" style=" margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+	            <div class="panel panel-info">
+	                <div class="panel-heading">
+	                    <div class="panel-title"><strong> <span class="glyphicon glyphicon-pencil"></span> New Review </strong></div>
+	                </div> 
+
+	                <div class="panel-body" >
+	                    <form id="reviewform" class="form-horizontal" role="form" action="add_review.php" method="POST">	                        
+	                        <div id="reviewalert" style="display:none" class="alert alert-danger">
+	                            <p>Error:</p>
+	                            <span></span>
+	                        </div>	  
+
+	                        <div class="form-group">
+	                            <label for="title" class="col-md-3 control-label">Title</label>
+	                            <div class="col-md-9">
+	                                <input type="text" class="form-control" name="title" placeholder="Title" required autofocus>
+	                            </div>
+	                        </div>                                  
+	                        	                                  
+	                        <div class="form-group">
+	                            <label for="isbn" class="col-md-3 control-label">ISBN</label>
+	                            <div class="col-md-9">
+	                                <input type="text" class="form-control" name="isbn" placeholder="ISBN" required>
+	                            </div>
+	                        </div>
+	                            
+	                        <div class="form-group">
+	                            <label for="author" class="col-md-3 control-label">Author</label>
+	                            <div class="col-md-9">
+	                                <input type="text" class="form-control" name="author" placeholder="Author" required>
+	                            </div>
+	                        </div>
+
+	                        <div class="form-group">
+	                            <label for="publisher" class="col-md-3 control-label">Publisher</label>
+	                            <div class="col-md-9">
+	                                <input type="text" class="form-control" name="publisher" placeholder="Publisher" required>
+	                            </div>
+	                        </div>
+
+	                        <div class="form-group">
+	                            <label for="rating" class="col-md-3 control-label">Rating</label>
+	                            <div class="col-md-9">
+	                                <input type="text" class="form-control" name="rating" placeholder="Rating" required>
+	                            </div>
+	                        </div>
+	                            
+	                        <div class="form-group">
+	                            <label for="review" class="col-md-3 control-label">Review</label>
+	                            <div class="col-md-9">
+	                                <input type="text" class="form-control" name="review" placeholder="Review" required>
+	                            </div>
+	                        </div>
+
+	                        <div class="form-group">
+	                            <!-- Button -->                                        
+	                            <div class="col-md-offset-3 col-md-9">
+	                                <button id="btn-signup" type="submit" class="btn btn-md btn-success"><span class="glyphicon glyphicon-pencil"></span> &nbsp Add Review</button>
+	                              <!--  <span style="margin-left:8px;">or</span>  -->
+	                            </div>
+	                        </div>                                  	                                	                               
+	                    </form>
+	                </div>
+	            </div>      
+	        </div> 
+   		</div>	
+   		<!-- Footer -->
+		<!-- First try for the online version of jQuery-->
+		<script src="http://code.jquery.com/jquery.js"></script>
+		
+		<!-- If no online access, fallback to our hardcoded version of jQuery -->
+		<script>window.jQuery || document.write('<script src=" js/jquery-1.8.2.min.js " ><\/script>')</script> 
+		
+		<!-- Bootstrap JS -->
+		<script src="js/bootstrap.min.js"></script>
+		
+		<!-- Custom JS -->
+		<script src="js/script.js"></script>
+	</body>
+</html>
+
+
